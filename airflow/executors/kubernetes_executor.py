@@ -442,7 +442,7 @@ class AirflowKubernetesScheduler(LoggingMixin):
             try_number=try_number,
             kube_image=self.kube_config.kube_image,
             date=execution_date,
-            command=command,
+            args=command,
             pod_override_object=kube_executor_config,
             base_worker_pod=self.worker_configuration_pod
         )
