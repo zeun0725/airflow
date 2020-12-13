@@ -912,13 +912,13 @@ function build_images::build_prod_images_from_packages() {
     rm -f "${AIRFLOW_SOURCES}/dist/"apache_airflow*.whl
     rm -f "${AIRFLOW_SOURCES}/dist/"apache-airflow*.tar.gz
 
-    # Remove all downloaded apache airflow packages
-    mv -f "${AIRFLOW_SOURCES}/dist/"* "${AIRFLOW_SOURCES}/docker-context-files/"
+    # Move all downloaded packages
+    mv -f "${AIRFLOW_SOURCES}/dist/"* "${AIRFLOW_SOURCES}/docker-context-files/" || true
 
     # Build apache airflow packages
     build_airflow_packages::build_airflow_packages
 
-    mv "${AIRFLOW_SOURCES}/dist/"* "${AIRFLOW_SOURCES}/docker-context-files/"
+    mv -f "${AIRFLOW_SOURCES}/dist/"* "${AIRFLOW_SOURCES}/docker-context-files/" || true
     build_images::build_prod_images
 }
 
