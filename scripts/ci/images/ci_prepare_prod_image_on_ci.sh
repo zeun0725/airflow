@@ -23,9 +23,6 @@ export AIRFLOW_PRE_CACHED_PIP_PACKAGES="false"
 export DOCKER_CACHE="local"
 export VERBOSE="true"
 
-export INSTALLED_EXTRAS="async,amazon,celery,cncf.kubernetes,docker,dask,elasticsearch,ftp,grpc,hashicorp,http,google,microsoft.azure,mysql,postgres,redis,sendgrid,sftp,slack,ssh,statsd,virtualenv"
-readonly INSTALLED_EXTRAS
-
 # shellcheck source=scripts/ci/libraries/_script_init.sh
 . "$( dirname "${BASH_SOURCE[0]}" )/../libraries/_script_init.sh"
 
