@@ -192,6 +192,7 @@ exclude_patterns = [
     '_api/airflow/configuration',
     '_api/airflow/contrib/auth',
     '_api/airflow/contrib/example_dags',
+    '_api/airflow/contrib/executors/index.rst',
     '_api/airflow/contrib/index.rst',
     '_api/airflow/contrib/kubernetes',
     '_api/airflow/contrib/task_runner',
