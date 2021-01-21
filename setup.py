@@ -17,7 +17,6 @@
 # under the License.
 """Setup.py for the Airflow project."""
 
-#test
 import logging
 import os
 import subprocess
@@ -830,12 +829,17 @@ def add_all_provider_packages():
 
 
 def do_setup():
+    #airflow 패키지 셋업 -> 첫 시작
     """Perform the Airflow package setup."""
     setup_kwargs = {}
 
+    #os.getenv -> 환경변수 가져옴
     if os.getenv('INSTALL_PROVIDERS_FROM_SOURCES') == 'true':
         # Only specify this if we need this option, otherwise let default from
         # setup.cfg control this (kwargs in setup() call take priority)
+        """
+        이 옵션이 필요한 경우에만 지정하고, 그렇지 않으면 기본값을 setup.cfg가 이것을 제어합니다 (setup () 호출의 kwargs가 우선합니다)
+        """
         setup_kwargs['packages'] = find_namespace_packages(include=['airflow*'])
     else:
         add_all_provider_packages()
